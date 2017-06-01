@@ -1,0 +1,16 @@
+﻿@using Project.Web.Constants;
+
+@{
+    var successMessage = TempData[TempDataMessageTypes.Success] as string;
+    var failureMessage = TempData[TempDataMessageTypes.Failure] as string;
+}
+
+@if (!string.IsNullOrEmpty(successMessage))
+{
+    <div class="alert alert-success">@successMessage</div>
+}
+
+@if (!string.IsNullOrEmpty(failureMessage))
+{
+    <div class="alert alert-danger">@failureMessage</div>
+}

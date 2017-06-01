@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Project.Domain.Entities.Post>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+
+            <div class="card mt-5">
+                <div class="card-header h4">
+                    Posts
+                    <a asp-action="Create" class="btn btn-success float-right">Create</a>
+                </div>
+
+                <div class="card-body">
+                    @foreach (var post in Model)
+                    {
+
+                        <span>@post.Title</span>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

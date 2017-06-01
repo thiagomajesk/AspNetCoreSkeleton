@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\javascripts\.gitkeep" />
+    <Content Remove="wwwroot\stylesheets\.gitkeep" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.8.1" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.2.2" />
+    <PackageReference Include="AutoMapper" Version="6.2.2" />
+    <PackageReference Include="MediatR" Version="4.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.0" PrivateAssets="All" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\javascripts\.gitkeep" />
+    <None Include="wwwroot\stylesheets\.gitkeep" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Project.App\Project.App.csproj" />
+    <ProjectReference Include="..\Project.Infra\Project.Infra.csproj" />
+  </ItemGroup>
+</Project>

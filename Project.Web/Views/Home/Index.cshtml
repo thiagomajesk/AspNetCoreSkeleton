@@ -1,0 +1,13 @@
+﻿@if (Context.User.Identity.IsAuthenticated)
+{
+    <h4>Wow! Parabéns, parece que você está autenticado</h4>
+    <p>
+        Você pode sair clicando <a asp-action="Logout" asp-controller="Home">aqui</a>
+    </p>
+}
+else
+{
+    <div>Ops! Ocorreu algum problema. Parece que você ainda não está autenticado</div>
+}
+
+<vc:version prefix="Número da Versão"></vc:version>
