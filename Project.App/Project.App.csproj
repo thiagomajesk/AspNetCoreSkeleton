@@ -3,23 +3,10 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Remove="Class1.cs" />
-    <Compile Remove="Queries\**" />
-    <Compile Remove="Commands\**" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Autofac" Version="4.8.1" />
     <PackageReference Include="MediatR" Version="4.1.0" />
     <PackageReference Include="AutoMapper" Version="6.2.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Remove="Queries\**" />
-    <EmbeddedResource Remove="Commands\**" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Remove="Queries\**" />
-    <None Remove="Commands\**" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Project.Domain\Project.Domain.csproj" />
