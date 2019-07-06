@@ -1,6 +1,5 @@
 ﻿using Autofac;
 using MediatR;
-using System.Collections.Generic;
 
 namespace Project.App.Config.AutoFac
 {
@@ -12,21 +11,10 @@ namespace Project.App.Config.AutoFac
             builder.RegisterType<Mediator>().As<IMediator>().InstancePerLifetimeScope();
 
             // Request Handlers
-            builder.Register<SingleInstanceFactory>(ctx =>
+            builder.Register<ServiceFactory>(context =>
             {
-                var c = ctx.Resolve<IComponentContext>();
-                return t =>
-                {
-                    object o;
-                    return c.TryResolve(t, out o) ? o : null;
-                };
-            }).InstancePerLifetimeScope();
-
-            // Notification Handlers
-            builder.Register<MultiInstanceFactory>(ctx =>
-            {
-                var c = ctx.Resolve<IComponentContext>();
-                return t => (IEnumerable<object>)c.Resolve(typeof(IEnumerable<>).MakeGenericType(t));
+                var c = context.Resolve<IComponentContext>();
+                return t => c.Resolve(t);
             }).InstancePerLifetimeScope();
 
             // Application Handlers
