@@ -27,10 +27,12 @@ namespace Project.Web.Controllers
             return View();
         }
 
-        [HttpGet]
-        public IActionResult Error()
+        [HttpGet("/error/{code?}")]
+        public IActionResult Error(int? code)
         {
-            return View();
+            if (code == null) return View();
+
+            return View($"Errors/Error{code}");
         }
 
         [HttpGet]

@@ -11,11 +11,19 @@
                 </div>
 
                 <div class="card-body">
-                    @foreach (var post in Model)
-                    {
-
-                        <span>@post.Title</span>
-                    }
+                    <ul class="list-group list-group-flush">
+                        @foreach (var post in Model)
+                        {
+                            <li class="list-group-item">
+                                <span>@post.Title</span>
+                                <span>
+                                    <a class="btn btn-sm btn-danger float-right mr-1" asp-action="delete" asp-controller="post" asp-route-id="@post.Id">Delete</a>
+                                    <a class="btn btn-sm btn-secondary float-right mr-1" asp-action="edit" asp-controller="post" asp-route-id="@post.Id">Edit</a>
+                                    <a class="btn btn-sm btn-link float-right mr-1" asp-action="show" asp-controller="post" asp-route-id="@post.Id">Show</a>
+                                </span>
+                            </li>
+                        }
+                    </ul>
                 </div>
             </div>
         </div>

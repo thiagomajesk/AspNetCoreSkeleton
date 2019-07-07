@@ -1,6 +1,7 @@
 ﻿@model Project.App.Features.Post.PostForm
 
-<form asp-route="@ViewBag.Action" method="post">
+<form asp-controller="post" asp-action="@ViewBag.Action" method="post">
+    <input type="hidden" name="Id" value="@ViewBag.Id" />
     <div class="form-group">
         <label asp-for="Title"></label>
         <input asp-for="Title" class="form-control" />

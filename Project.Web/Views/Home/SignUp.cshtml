@@ -1,20 +1,20 @@
 ﻿@model Project.App.Features.User.Queries.GetUserClaimsQuery
 
-<div class="row">
+<div class="row mt-4">
     <div class="col-4 m-auto">
         <div class="card">
-            <div class="h4 card-header">Criar nova conta</div>
+            <div class="h4 card-header">New account</div>
             <div class="card-body">
                 <form asp-action="SignUp" asp-controller="Home" method="post">
                     <div class="form-group">
                         <label asp-for="Email"></label>
-                        <input asp-for="Email" class="form-control" type="text" name="email">
+                        <input asp-for="Email" class="form-control" type="text" name="email" placeholder="Email">
                     </div>
                     <div class="form-group">
                         <label asp-for="Password"></label>
-                        <input asp-for="Password" class="form-control" type="password" name="password">
+                        <input asp-for="Password" class="form-control" type="password" name="password" placeholder="Password">
                     </div>
-                    <button class="btn btn-primary" type="submit">Criar</button>
+                    <button class="btn btn-primary" type="submit">Create</button>
                 </form>
             </div>
         </div>

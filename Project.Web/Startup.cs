@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Project.App.Config.AutoFac;
 using Project.Infra;
 using System;
@@ -16,10 +17,12 @@ namespace Project.Web
     public class Startup
     {
         private IConfiguration Configuration { get; }
+        private ILoggerFactory Logger { get; }
 
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, ILoggerFactory logger)
         {
             Configuration = configuration;
+            Logger = logger;
         }
 
         /// <summary>
@@ -75,6 +78,7 @@ namespace Project.Web
             }
             else
             {
+                app.UseStatusCodePagesWithReExecute("/error/{0}");
                 app.UseExceptionHandler("/home/error");
                 app.UseHsts();
             }
@@ -87,7 +91,11 @@ namespace Project.Web
 
             app.UseAuthentication();
 
-            app.UseMvcWithDefaultRoute();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(name: "default", template: "{controller=Home}/{action=Index}/{id?}");
+                routes.MapRoute(name: "areas", template: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+            });
         }
     }
 }

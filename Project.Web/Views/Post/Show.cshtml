@@ -1,0 +1,20 @@
+﻿@model Project.Domain.Entities.Post
+
+<div class="row">
+    <div class="col-md-8 m-auto">
+        <div class="card">
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                        <label asp-for="Title"></label>
+                        <input asp-for="Title" class="form-control" disabled />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Body"></label>
+                        <textarea asp-for="Body" class="form-control" disabled></textarea>
+                    </div>
+                </form>
+            </div>
+        </div>  
+    </div>
+</div>

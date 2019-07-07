@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Project.App.Features.Post.Commands;
 using Project.App.Features.Post.Queries;
@@ -6,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Project.Web.Controllers
 {
+    [Authorize]
     public class PostController : Controller
     {
         private readonly IMediator mediator;
@@ -60,5 +62,14 @@ namespace Project.Web.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Delete(DeletePostCommand command)
+        {
+            var result = await mediator.Send(command);
+
+            return RedirectToAction(nameof(Index));
+        }
+
     }
 }
