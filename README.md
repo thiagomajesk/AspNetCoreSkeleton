@@ -8,14 +8,14 @@
 - Bootstrap 4.x
 - ASP.NET Core ViewComponents usage examples
 - Nice folder structure
+- MediatR (CQRS)
+- Typescript and Webpack (laravel-mix)
+- KnockoutJs using [knockout.bootstrapper](https://github.com/thiagomajesk/knockout.bootstrapper) workflow
 
 #### Planning to add:
 
-- Babel (ES6) config through [Brunch](http://brunch.io/)
-- [StimulusJs](https://stimulusjs.org/)
 - Localization
 - FluentValidations
-- MediatR (CQRS)
 
 #### What this project IS and IS NOT:
 
