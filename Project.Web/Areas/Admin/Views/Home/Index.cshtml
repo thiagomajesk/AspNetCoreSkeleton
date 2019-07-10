@@ -4,3 +4,25 @@
         <p>You can make it anything you want</p>
     </div>
 </div>
+<div class="row mt-4">
+    <div class="col text-center">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">This is a Knockout component</h5>
+                <hello-world></hello-world>
+            </div>
+        </div>
+    </div>
+    <div class="col text-center">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">This is a traditional Knockout view model bind</h5>
+                <div data-bind="viewModel: 'admin-home'">
+                    <button class="btn btn-info" data-bind="click: click, disable: count() >= 150">Click Me!</button>
+                    <span class="badge badge-dark" data-bind="text: count, hidden: count() <= 0"></span>
+                    <span class="badge badge-light" data-bind="text: message, hidden: message() == null"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

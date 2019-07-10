@@ -1,0 +1,8 @@
+{
+    "/dist/application.js": "/dist/application.js",
+    "/dist/application.css": "/dist/application.css",
+    "/dist/application.js.map": "/dist/application.js.map",
+    "/dist/application.css.map": "/dist/application.css.map",
+    "/dist/application.min.js": "/dist/application.min.js",
+    "/dist/application.min.css": "/dist/application.min.css"
+}
